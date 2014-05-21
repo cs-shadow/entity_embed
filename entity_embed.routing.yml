@@ -1,0 +1,28 @@
+entity_embed_micro.view:
+  path: '/entity-embed/micro/{micro}/preview'
+  defaults:
+    _controller: '\Drupal\entity_embed\Controller\MicroEntityEmbedController::preview'
+  requirements:
+    _entity_access: 'micro.view'
+
+entity_embed_micro.ckeditor_dialog:
+  path: '/admin/entity-embed/micro/{micro}/embed'
+  defaults:
+    _controller: '\Drupal\entity_embed\Controller\CkeditorDialogControllerBase::save'
+  requirements:
+    _entity_access: 'micro.view'
+
+entity_embed_media.view:
+  path: '/entity-embed/media/{media}/preview/{mode}'
+  defaults:
+    _controller: '\Drupal\entity_embed\Controller\MediaEntityEmbedController::preview'
+    mode: medium
+  requirements:
+    _entity_access: 'media.view'
+
+entity_embed_media.ckeditor_dialog:
+  path: '/admin/entity-embed/media/{media}/embed'
+  defaults:
+    _controller: '\Drupal\entity_embed\Controller\MediaCkeditorDialogController::save'
+  requirements:
+    _entity_access: 'media.view'

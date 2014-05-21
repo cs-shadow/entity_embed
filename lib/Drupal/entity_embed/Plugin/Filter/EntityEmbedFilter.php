@@ -11,6 +11,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\String;
 use Drupal\Component\Utility\Unicode;
 use Drupal\Component\Utility\Xss;
+use Drupal\entity_reference\RecursiveRenderingException;
 use Drupal\filter\Plugin\FilterBase;
 
 /**
@@ -54,7 +55,7 @@ class EntityEmbedFilter extends FilterBase {
           }
 
           // Check if entity exists and we have entity access.
-          if ($entity && $entity->access()) {
+          if ($entity && $entity->access('view')) {
 
             // Protect ourselves from recursive rendering.
             static $depth = 0;
