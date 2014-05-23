@@ -1,0 +1,69 @@
+format: entity_embed_full_html
+name: 'Full HTML (with Entity Embed)'
+weight: 1
+status: true
+uuid: 2d0d47d6-b499-449b-9f00-cfd94bebc5e6
+langcode: en
+dependencies:
+  module:
+    - editor
+    - entity_embed
+filters:
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -50
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: false
+    weight: -49
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -48
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -46
+    settings:
+      allowed_html: '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h4> <h5> <h6> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <h2> <h3> <pre>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -45
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -43
+    settings:
+      filter_url_length: 72
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: -47
+    settings: {  }

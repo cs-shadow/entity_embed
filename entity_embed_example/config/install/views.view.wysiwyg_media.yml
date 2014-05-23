@@ -324,17 +324,33 @@ display:
       sorts: {  }
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          dependencies:
+            module:
+              - views
+              - views
+          empty: true
+          tokenize: false
+          content: 'No images were found, <a href="[site:url]media/add/image">Upload new image</a>'
+          format: basic_html
+          plugin_id: text
+          provider: views
       relationships: {  }
       arguments: {  }
-      title: 'Contact person'
+      title: Images
       use_ajax: true
 label: wysiwyg-media
 module: views
 id: wysiwyg_media
 tag: ''
-uuid: e5ed9e99-0374-439e-b34f-796a34ff40cf
-langcode: de
+langcode: en
 dependencies:
   entity:
     - field.field.media.field_image
