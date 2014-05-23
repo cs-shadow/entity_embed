@@ -4,6 +4,13 @@ core: 8.x
 description: ''
 status: true
 display:
+  image:
+    display_plugin: page
+    id: image
+    display_title: Images
+    position: 1
+    display_options:
+      path: admin/entity-embed/media/image
   default:
     display_plugin: default
     id: default
@@ -145,14 +152,19 @@ display:
           hide_alter_empty: true
           plugin_id: standard
           provider: views
-        field_image_resource:
-          id: field_image_resource
-          table: media__field_image_resource
-          field: field_image_resource
+        field_image:
+          id: field_image
+          table: media__field_image
+          field: field_image
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          dependencies:
+            entity:
+              - field.field.media.field_image
+            module:
+              - field
+          label: Image
           exclude: false
           alter:
             alter_text: false
@@ -185,7 +197,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -317,16 +329,15 @@ display:
       arguments: {  }
       title: 'Contact person'
       use_ajax: true
-  image:
-    display_plugin: page
-    id: image
-    display_title: Images
-    position: 1
-    display_options:
-      path: admin/entity-embed/media/image
 label: wysiwyg-media
 module: views
 id: wysiwyg_media
 tag: ''
 uuid: e5ed9e99-0374-439e-b34f-796a34ff40cf
 langcode: de
+dependencies:
+  entity:
+    - field.field.media.field_image
+  module:
+    - field
+    - media_entity
